@@ -14,7 +14,7 @@ router.get('/run', async function (req, res, next) {
     add((data => {
         tests.push(data)
         console.log(tests)
-        res.render('index', {tests})
+        res.redirect('/');
     }))
 });
 
