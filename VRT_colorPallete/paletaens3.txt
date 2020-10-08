@@ -1,1 +1,5 @@
+Paletas:
 http://paletadecolores.s3-website-us-east-1.amazonaws.com/
+
+VRT:
+http://ec2-52-87-225-52.compute-1.amazonaws.com/
