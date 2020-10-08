@@ -1,16 +1,21 @@
 const express = require('express');
 const router = express.Router();
 
-const cy = require('../services/run_cypress')
+const add = require('../services/add_test')
+
+let tests = []
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('index', {title: 'Express'});
+    res.render('index', {tests});
 });
 
 router.get('/run', async function (req, res, next) {
-    let results = await cy()
-    res.json(results)
+    add((data => {
+        tests.push(data)
+        console.log(tests)
+        res.render('index', {tests})
+    }))
 });
 
 module.exports = router;
